@@ -1,0 +1,12 @@
+<view class="profile">
+  <!-- 未登录状态 -->
+  <block wx:if="{{!hasUserInfo}}">
+    <button class="login-btn" bindtap="getUserProfile">点击登录</button>
+  </block>
+  
+  <!-- 已登录状态 -->
+  <block wx:else>
+    <image class="avatar" src="{{userInfo.avatarUrl}}"></image>
+    <text class="nickname">{{userInfo.nickName}}</text>
+  </block>
+</view> 

@@ -1,0 +1,25 @@
+mall-miniprogram/
+├── pages/                # 页面文件
+│   ├── index/           # 首页
+│   ├── category/        # 分类页
+│   ├── cart/            # 购物车
+│   ├── user/            # 个人中心
+│   ├── goods/           # 商品相关页面
+│   ├── order/           # 订单相关页面
+│   └── address/         # 地址相关页面
+├── components/          # 公共组件
+│   ├── goods-item/      # 商品项组件
+│   ├── cart-item/       # 购物车项组件
+│   └── address-item/    # 地址项组件
+├── utils/              # 工具函数
+│   ├── request.js      # 请求封装
+│   ├── auth.js         # 登录认证
+│   └── util.js         # 通用工具函数
+├── config/             # 配置文件
+│   └── config.js       # 全局配置
+├── assets/             # 静态资源
+│   ├── images/         # 图片资源
+│   └── styles/         # 公共样式
+├── app.js             # 小程序入口文件
+├── app.json           # 小程序配置文件
+└── app.wxss           # 小程序全局样式 

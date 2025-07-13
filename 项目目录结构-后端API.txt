@@ -1,0 +1,18 @@
+mall-server/
+├── src/
+│   ├── controllers/    # 控制器
+│   │   ├── user.js    # 用户相关
+│   │   ├── goods.js   # 商品相关
+│   │   └── order.js   # 订单相关
+│   ├── models/        # 数据模型
+│   ├── routes/        # 路由配置
+│   ├── middlewares/   # 中间件
+│   │   ├── auth.js    # 认证中间件
+│   │   └── error.js   # 错误处理
+│   ├── utils/         # 工具函数
+│   ├── config/        # 配置文件
+│   └── app.js         # 应用入口
+├── logs/              # 日志文件
+├── uploads/           # 上传文件
+├── package.json       # 项目配置
+└── .env              # 环境变量 

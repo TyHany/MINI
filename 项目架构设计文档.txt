@@ -1,0 +1,128 @@
+商城小程序项目架构设计文档
+
+一、项目概述
+本项目是一个微信小程序商城系统，包含三个子项目：
+1. 商城小程序前端 - 面向用户的购物平台
+2. 商城管理后台 - 面向商家的运营管理平台
+3. 小程序前端的后端API服务 - 只为小程序前端提供数据服务
+
+二、技术选型
+1. 小程序前端
+   - 开发框架：微信小程序原生框架
+   - 状态管理：微信小程序内置storage
+   - 请求库：微信小程序内置request
+
+2. 管理后台
+   - 开发框架：Node.js + Express
+   - UI组件库：Vue.js + Element UI
+   - 权限认证：Session + Cookie
+
+3. 后端服务
+   - 开发语言：Node.js
+   - Web框架：Express
+
+三、系统安全设计
+1. 身份认证
+   - 小程序用户：微信登录 + JWT令牌
+   - 管理后台：账号密码 + Session认证
+   - 密码加密：使用MD5进行密码加密存储
+
+2. 数据安全
+   - 使用HTTPS协议传输
+   - 敏感数据加密存储
+   - 防止SQL注入：使用参数化查询
+   - 防止XSS攻击：输入过滤，输出转义
+   - 防止CSRF攻击：使用Token验证
+
+3. 接口安全
+   - 接口签名验证
+   - 请求频率限制
+   - 数据验证和过滤
+   - 日志记录和审计
+
+四、数据存储设计
+1. MySQL数据库
+   - 用户信息表
+   - 商品分类表
+   - 商品信息表
+   - 订单信息表 (存储订单基本信息,包含订单号、用户ID、订单状态、支付状态、收货地址、订单总金额等)
+   - 订单商品表 (存储订单中的商品明细,关联订单信息表的订单号,包含商品ID、购买数量、商品单价等)
+   - 购物车表
+   - 收货地址表
+   - 系统管理表
+   - 轮播图表
+
+3. 文件存储
+   - 商品图片
+   - 轮播图
+
+五、部署架构
+1. 开发环境
+   - 本地开发环境
+     - 配置文件: config.development.js
+     - 环境变量: NODE_ENV=development
+     - 特点配置:
+       - 数据库: 本地MySQL
+       - 文件上传: 本地存储
+       - 日志级别: debug
+       - API地址: localhost
+       - 调试模式: 开启
+
+   - 生产环境
+     - 配置文件: config.production.js  
+     - 环境变量: NODE_ENV=production
+     - 特点配置:
+       - 数据库: 生产服务器MySQL集群
+       - 文件上传: 云存储
+       - 日志级别: debug
+       - API地址: mall-server.guoxu.tech
+       - 调试模式: 关闭
+
+   - 配置文件加载机制
+     - 通过环境变量NODE_ENV判断当前环境
+     - 根据环境加载对应配置文件:
+       ```js
+       // config/index.js
+       const env = process.env.NODE_ENV || 'development'
+       const config = require(`./config.${env}.js`)
+       module.exports = config
+       ```
+     - 配置文件合并策略:
+       - 基础配置(config.base.js): 存放所有环境通用配置
+       - 环境配置(config.development.js/config.production.js): 存放特定环境配置
+       - 环境配置覆盖基础配置
+     - 配置文件使用:
+       ```js
+       // app.js
+       const config = require('./config')
+       app.set('port', config.port)
+       app.set('db', config.database)
+       ```
+     - 敏感配置:
+       - 数据库密码、API密钥等敏感信息使用环境变量
+       - 通过.env文件管理环境变量
+       - 生产环境的.env文件不提交到代码仓库
+
+2. 生产环境
+   - 应用服务器：Node.js服务器
+   - 数据库服务器：MySQL服务器
+
+六、开发规范
+1. 代码规范
+   - 使用ESLint进行代码检查
+   - 遵循统一的命名规范
+   - 编写注释和文档
+
+2. 版本控制
+   - 使用Git进行版本管理
+   - 遵循Git Flow工作流
+   - 规范的提交信息格式
+
+3. 项目管理
+   - 使用GitHub/GitLab进行协作
+   - 问题跟踪和任务管理 
+
+
+
+$env:NODE_ENV = "development"
+$env:NODE_ENV = "production"
