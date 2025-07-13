@@ -1,0 +1,61 @@
+<view class="container">
+  <view class="form">
+    <!-- 收货人 -->
+    <view class="form-item">
+      <text class="label">收货人</text>
+      <input class="input" 
+             type="text"
+             placeholder="请输入收货人姓名"
+             value="{{receiverName}}"
+             data-field="receiverName"
+             bindinput="onInput"/>
+    </view>
+
+    <!-- 手机号码 -->
+    <view class="form-item">
+      <text class="label">手机号码</text>
+      <input class="input" 
+             type="number"
+             maxlength="11"
+             placeholder="请输入手机号码"
+             value="{{receiverPhone}}"
+             data-field="receiverPhone"
+             bindinput="onInput"/>
+    </view>
+
+    <!-- 所在地区 -->
+    <view class="form-item">
+      <text class="label">所在地区</text>
+      <picker mode="region" 
+              bindchange="bindRegionChange" 
+              value="{{region}}">
+        <view class="picker {{region[0] ? '' : 'placeholder'}}">
+          {{region[0] ? region[0] + region[1] + region[2] : '请选择所在地区'}}
+        </view>
+      </picker>
+    </view>
+
+    <!-- 详细地址 -->
+    <view class="form-item">
+      <text class="label">详细地址</text>
+      <input class="input" 
+             type="text"
+             placeholder="请输入详细地址"
+             value="{{detailAddress}}"
+             data-field="detailAddress"
+             bindinput="onInput"/>
+    </view>
+
+    <!-- 设为默认地址 -->
+    <view class="form-item switch-item">
+      <text class="label">设为默认地址</text>
+      <switch checked="{{isDefault}}" 
+              bindchange="switchDefault"/>
+    </view>
+  </view>
+
+  <!-- 保存按钮 -->
+  <view class="footer">
+    <button class="save-btn" bindtap="saveAddress">保存</button>
+  </view>
+</view> 

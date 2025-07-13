@@ -1,0 +1,110 @@
+.container {
+  min-height: 100vh;
+  background: #f7f7f7;
+}
+
+/* 用户信息区域 */
+.user-info {
+  background: #fff;
+  padding: 40rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20rpx;
+}
+
+.avatar {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+  margin-bottom: 20rpx;
+}
+
+.nickname {
+  font-size: 32rpx;
+  color: #333;
+}
+
+.login-btn {
+  background: none;
+  border: none;
+  font-size: 32rpx;
+  color: #333;
+  padding: 0;
+  line-height: 1.5;
+}
+
+.login-btn::after {
+  display: none;
+}
+
+/* 功能菜单 */
+.menu-list {
+  background: #fff;
+}
+
+.menu-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30rpx;
+  border-bottom: 1rpx solid #eee;
+  font-size: 28rpx;
+  color: #333;
+}
+
+.menu-item:last-child {
+  border-bottom: none;
+}
+
+.arrow {
+  color: #999;
+  font-size: 24rpx;
+}
+
+.logout {
+  margin-top: 20rpx;
+  color: #E93B3D;
+}
+
+.avatar-wrapper {
+  padding: 0;
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+  margin-bottom: 20rpx;
+  background: none;
+}
+
+.avatar-wrapper::after {
+  border: none;
+}
+
+.nickname-input {
+  width: 80%;
+  height: 80rpx;
+  border: 1rpx solid #eee;
+  border-radius: 40rpx;
+  padding: 0 30rpx;
+  margin: 20rpx 0;
+  text-align: center;
+}
+
+.confirm-btn {
+  width: 80%;
+  height: 80rpx;
+  line-height: 80rpx;
+  border-radius: 40rpx;
+  background: #E93B3D;
+  color: #fff;
+  font-size: 28rpx;
+  margin-top: 20rpx;
+}
+
+.confirm-btn::after {
+  border: none;
+}
+
+.confirm-btn[disabled] {
+  background: #ccc;
+} 

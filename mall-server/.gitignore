@@ -1,0 +1,3 @@
+# ... 其他忽略项
+/uploads/*
+!uploads/.gitkeep 

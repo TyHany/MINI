@@ -1,0 +1,41 @@
+.goods .search-toolbar {
+    margin-bottom: 20px;
+}
+
+.goods .operation-toolbar {
+    margin-bottom: 20px;
+}
+
+.goods .pagination-container {
+    margin-top: 20px;
+    text-align: right;
+}
+
+.goods-uploader {
+    border: 1px dashed #d9d9d9;
+    border-radius: 6px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    width: 178px;
+    height: 178px;
+}
+
+.goods-uploader:hover {
+    border-color: #409EFF;
+}
+
+.goods-uploader-icon {
+    font-size: 28px;
+    color: #8c939d;
+    width: 178px;
+    height: 178px;
+    line-height: 178px;
+    text-align: center;
+}
+
+.goods-image {
+    width: 178px;
+    height: 178px;
+    display: block;
+} 

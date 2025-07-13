@@ -1,0 +1,116 @@
+图片上传接口文档
+==============
+
+基本信息
+-------
+- 接口URL: `http://mall-server.guoxu.tech/api/app/upload`
+- 请求方式: POST
+- Content-Type: multipart/form-data
+
+请求头
+-----
+| 参数名 | 必选 | 类型 | 说明 |
+|--------|------|------|------|
+| app-token | 是 | string | 访问令牌 |
+
+请求参数
+-------
+| 参数名 | 必选 | 类型 | 说明 |
+|--------|------|------|------|
+| file | 是 | file | 图片文件 |
+
+文件限制
+-------
+- 文件类型：仅支持图片文件（image/*）
+- 文件大小：最大 10MB
+
+响应参数
+-------
+
+成功响应：
+{
+  "code": 0,
+  "message": "上传成功",
+  "data": {
+    "url": "http://example.com/uploads/1234567890.jpg",
+    "filename": "1234567890.jpg"
+  }
+}
+
+错误响应：
+
+1. 未提供token或token无效
+{
+  "code": 401,
+  "message": "无效的访问令牌"
+}
+
+2. 未上传文件
+{
+  "code": 400,
+  "message": "没有上传文件"
+}
+
+3. 文件类型错误
+{
+  "code": 400,
+  "message": "只能上传图片文件！"
+}
+
+4. 文件大小超限
+{
+  "code": 413,
+  "message": "文件太大"
+}
+
+5. 服务器错误
+{
+  "code": 500,
+  "message": "文件上传失败"
+}
+
+调用示例
+-------
+
+1. cURL:
+curl -X POST \
+  'http://your-domain.com/api/app/upload' \
+  -H 'app-token: your-default-app-token-123456' \
+  -F 'file=@/path/to/image.jpg'
+
+2. JavaScript:
+const formData = new FormData();
+formData.append('file', fileInput.files[0]);
+
+fetch('http://your-domain.com/api/app/upload', {
+  method: 'POST',
+  headers: {
+    'app-token': 'your-default-app-token-123456'
+  },
+  body: formData
+})
+.then(response => response.json())
+.then(data => console.log(data))
+.catch(error => console.error('Error:', error));
+
+3. Python:
+import requests
+
+url = 'http://your-domain.com/api/app/upload'
+headers = {
+    'app-token': 'your-default-app-token-123456'
+}
+files = {
+    'file': open('image.jpg', 'rb')
+}
+
+response = requests.post(url, headers=headers, files=files)
+print(response.json())
+
+注意事项
+-------
+1. 请确保请求头中包含正确的 `app-token`
+2. 文件必须是图片格式（如：jpg、png、gif等）
+3. 文件大小不能超过10MB
+4. 上传成功后请保存返回的URL，用于后续访问该图片
+5. 建议在上传大文件前先进行客户端压缩 

@@ -1,0 +1,167 @@
+.container {
+  min-height: 100vh;
+  background: #f7f7f7;
+  padding-bottom: 120rpx;
+}
+
+/* 订单状态 */
+.status-section {
+  background: #E93B3D;
+  padding: 40rpx 30rpx;
+  color: #fff;
+  display: flex;
+  align-items: center;
+}
+
+.status-icon {
+  font-size: 48rpx;
+  margin-right: 20rpx;
+}
+
+.status-text {
+  font-size: 32rpx;
+}
+
+/* 收货地址 */
+.address-section {
+  background: #fff;
+  margin: 20rpx;
+  padding: 30rpx;
+  border-radius: 12rpx;
+  display: flex;
+  align-items: flex-start;
+}
+
+.address-icon {
+  font-size: 40rpx;
+  margin-right: 20rpx;
+  color: #666;
+}
+
+.address-info {
+  flex: 1;
+}
+
+.user-info {
+  margin-bottom: 10rpx;
+}
+
+.name {
+  font-size: 32rpx;
+  font-weight: bold;
+  margin-right: 20rpx;
+}
+
+.phone {
+  color: #666;
+}
+
+.address-detail {
+  font-size: 28rpx;
+  color: #333;
+  line-height: 1.4;
+}
+
+/* 商品列表 */
+.goods-list {
+  background: #fff;
+  margin: 20rpx;
+  padding: 0 30rpx;
+  border-radius: 12rpx;
+}
+
+.goods-item {
+  display: flex;
+  padding: 30rpx 0;
+  border-bottom: 1rpx solid #eee;
+}
+
+.goods-item:last-child {
+  border-bottom: none;
+}
+
+.goods-image {
+  width: 160rpx;
+  height: 160rpx;
+  margin-right: 20rpx;
+  border-radius: 8rpx;
+}
+
+.goods-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.goods-name {
+  font-size: 28rpx;
+  color: #333;
+  line-height: 1.4;
+}
+
+.goods-price-num {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.goods-price {
+  color: #E93B3D;
+  font-size: 32rpx;
+}
+
+.goods-num {
+  color: #999;
+  font-size: 28rpx;
+}
+
+/* 订单信息 */
+.order-info {
+  background: #fff;
+  margin: 20rpx;
+  padding: 30rpx;
+  border-radius: 12rpx;
+}
+
+.info-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20rpx;
+  font-size: 28rpx;
+}
+
+.info-item:last-child {
+  margin-bottom: 0;
+}
+
+.label {
+  color: #666;
+}
+
+.value {
+  color: #333;
+}
+
+.value.price {
+  color: #E93B3D;
+  font-weight: bold;
+}
+
+/* 底部按钮 */
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #fff;
+  padding: 20rpx;
+  box-shadow: 0 -2rpx 10rpx rgba(0,0,0,0.05);
+}
+
+.pay-btn {
+  background: #E93B3D;
+  color: #fff;
+  border-radius: 40rpx;
+  font-size: 32rpx;
+} 

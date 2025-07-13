@@ -1,0 +1,21 @@
+.dashboard .el-card {
+    margin-bottom: 20px;
+}
+
+.dashboard .card-body {
+    padding: 20px 0;
+}
+
+.dashboard .order-stat {
+    text-align: center;
+}
+
+.dashboard .order-stat .num {
+    font-size: 24px;
+    color: #409EFF;
+    margin-bottom: 10px;
+}
+
+.dashboard .order-stat .text {
+    color: #666;
+} 

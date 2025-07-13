@@ -1,0 +1,50 @@
+/* 销售统计样式 */
+.sales-stats .stats-card {
+    text-align: center;
+    padding: 20px 0;
+}
+
+.sales-stats .stats-card .amount {
+    font-size: 24px;
+    color: #409EFF;
+    font-weight: bold;
+}
+
+/* 订单统计样式 */
+.order-stats .stats-item {
+    text-align: center;
+    padding: 20px 0;
+}
+
+.order-stats .stats-item .label {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.order-stats .stats-item .value {
+    font-size: 24px;
+    color: #409EFF;
+    font-weight: bold;
+}
+
+.order-stats .conversion-item {
+    text-align: center;
+    padding: 20px 0;
+}
+
+.order-stats .conversion-item .label {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.order-stats .conversion-item .value {
+    font-size: 24px;
+    color: #409EFF;
+    font-weight: bold;
+}
+
+.order-stats .conversion-item .value.highlight {
+    color: #67C23A;
+} 

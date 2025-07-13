@@ -1,0 +1,81 @@
+# 依赖目录
+node_modules/
+vendor/
+.pnpm-store/
+
+# 构建输出
+dist/
+build/
+out/
+target/
+
+# IDE和编辑器文件
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# 日志文件
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# 环境配置
+.env
+.env.local
+.env.*.local
+
+# 缓存文件
+.cache/
+.npm/
+.eslintcache
+.prettiercache
+
+# 测试覆盖率
+coverage/
+
+# 临时文件
+tmp/
+temp/
+
+# 系统文件
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Python
+__pycache__/
+*.py[cod]
+*.so
+.Python
+env/
+venv/
+.env/
+.venv/
+
+# Java
+*.class
+*.jar
+*.war
+*.ear
+*.nar
+hs_err_pid*
+
+# Ruby
+*.gem
+*.rbc
+.bundle/
+vendor/bundle
+
+# 其他
+*.bak
+*.swp
+*.swo
+*~ 

@@ -1,0 +1,181 @@
+/* 全局样式 */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+/* 侧边栏样式 */
+.el-aside {
+    background-color: #1f2937; /* 深蓝色 */
+    transition: width 0.3s;
+}
+
+.logo {
+    height: 60px;
+    line-height: 60px;
+    background: #111827; /* 更深的蓝色 */
+    padding: 0 20px;
+    box-sizing: border-box;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.logo img {
+    width: 32px;
+    height: 32px;
+    vertical-align: middle;
+}
+
+.logo span {
+    color: #fff;
+    font-size: 16px;
+    margin-left: 10px;
+    vertical-align: middle;
+}
+
+/* 头部样式 */
+.el-header {
+    background-color: #fff;
+    /* border-bottom: 1px solid #e6e6e6; */
+    box-shadow: 0 1px 4px rgba(0,21,41,.08);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    z-index: 1;
+}
+
+.header-left i {
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.header-right .el-dropdown-link {
+    cursor: pointer;
+    color: #3b82f6; /* 新的主题蓝 */
+}
+
+/* 内容区域样式 */
+.el-main {
+    background-color: #f3f4f6; /* 更柔和的灰色 */
+    padding: 20px;
+}
+
+/* 修改Element UI默认颜色 */
+.el-button--primary {
+    background-color: #3b82f6;
+    border-color: #3b82f6;
+}
+
+.el-button--primary:hover {
+    background-color: #2563eb;
+    border-color: #2563eb;
+}
+
+.el-radio-button__orig-radio:checked+.el-radio-button__inner {
+    background-color: #3b82f6;
+    border-color: #3b82f6;
+}
+
+.el-menu-item.is-active {
+    color: #ffffff !important;
+    background-color: #3b82f6 !important;
+}
+
+.el-tag--success {
+    background-color: #f0f9eb;
+    border-color: #e1f3d8;
+    color: #67c23a;
+}
+.el-tag--info {
+    background-color: #f4f4f5;
+    border-color: #e9e9eb;
+    color: #909399;
+}
+.el-tag--warning {
+    background-color: #fdf6ec;
+    border-color: #faecd8;
+    color: #e6a23c;
+}
+.el-tag--danger {
+    background-color: #fef0f0;
+    border-color: #fde2e2;
+    color: #f56c6c;
+}
+
+/* 富文本编辑器样式 */
+#editor-container {
+    border: 1px solid #d1d5db;
+    border-radius: 4px;
+}
+
+.w-e-toolbar {
+    background-color: #f5f7fa !important;
+    border: none !important;
+    padding: 5px !important;
+    border-bottom: 1px solid #dcdfe6 !important;
+}
+
+.w-e-text-container {
+    border: none !important;
+    height: 450px !important;
+}
+
+.w-e-text {
+    padding: 10px 15px !important;
+    overflow-y: auto !important;
+    min-height: 400px !important;
+}
+
+.w-e-text p {
+    margin: 10px 0;
+}
+
+.w-e-text img {
+    max-width: 100% !important;
+}
+
+.w-e-menu {
+    z-index: 2 !important;
+    padding: 4px 7px !important;
+    margin: 0 3px !important;
+}
+
+.w-e-menu:hover {
+    background-color: #ecf5ff !important;
+    z-index: 2 !important;
+    border-radius: 3px;
+}
+
+.w-e-droplist {
+    z-index: 10000 !important;
+    border-color: #dcdfe6 !important;
+    box-shadow: 0 2px 12px 0 rgba(0,0,0,.1) !important;
+}
+
+.w-e-panel-container {
+    z-index: 10000 !important;
+    border-color: #dcdfe6 !important;
+    box-shadow: 0 2px 12px 0 rgba(0,0,0,.1) !important;
+}
+
+.w-e-panel-container .w-e-panel-tab-content input[type=text] {
+    border: 1px solid #dcdfe6 !important;
+    border-radius: 4px !important;
+    padding: 0 10px !important;
+    height: 32px !important;
+}
+
+.w-e-panel-container .w-e-panel-tab-content .w-e-button-container button {
+    background-color: #3b82f6 !important;
+    color: white !important;
+    border: none !important;
+    padding: 8px 15px !important;
+    border-radius: 4px !important;
+    cursor: pointer !important;
+}
+
+.w-e-panel-container .w-e-panel-tab-content .w-e-button-container button.gray {
+    background-color: #909399 !important;
+} 

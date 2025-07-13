@@ -1,0 +1,39 @@
+<view class="container">
+  <!-- 左侧分类列表 -->
+  <scroll-view class="category-list" scroll-y>
+    <view 
+      wx:for="{{categories}}" 
+      wx:key="id"
+      class="category-item {{currentCategory.id === item.id ? 'active' : ''}}"
+      bindtap="switchCategory"
+      data-category="{{item}}"
+    >
+      {{item.name}}
+    </view>
+  </scroll-view>
+
+  <!-- 右侧商品列表 -->
+  <scroll-view class="goods-list" scroll-y>
+    <block wx:if="{{goods.length > 0}}">
+      <view class="goods-item" 
+            wx:for="{{goods}}" 
+            wx:key="id"
+            bindtap="goToDetail"
+            data-id="{{item.id}}">
+        <image class="goods-image" src="{{item.image_url}}" mode="aspectFill"/>
+        <view class="goods-info">
+          <text class="goods-name">{{item.name}}</text>
+          <view class="goods-bottom">
+            <text class="goods-price">¥{{item.price}}</text>
+            <view class="add-cart" catchtap="addToCart" data-product="{{item}}">
+              <image src="/assets/icons/cart-add.png" mode="aspectFit"/>
+            </view>
+          </view>
+        </view>
+      </view>
+    </block>
+    <view class="empty" wx:else>
+      <text>暂无商品</text>
+    </view>
+  </scroll-view>
+</view> 

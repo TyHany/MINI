@@ -1,0 +1,7 @@
+<view class="container">
+  <view class="products-grid">
+    <view class="product-card" wx:for="{{products}}" wx:key="id">
+      <!-- 使用与首页相同的商品卡片样式 -->
+    </view>
+  </view>
+</view> 

@@ -1,0 +1,31 @@
+.order .search-toolbar {
+    margin-bottom: 20px;
+}
+
+.order .date-separator {
+    margin: 0 10px;
+}
+
+.order .pagination-container {
+    margin-top: 20px;
+    text-align: right;
+}
+
+.order .order-goods .title {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.order .order-total {
+    text-align: right;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.order .order-total .price {
+    color: #f56c6c;
+    font-size: 18px;
+    font-weight: bold;
+    margin-left: 10px;
+} 

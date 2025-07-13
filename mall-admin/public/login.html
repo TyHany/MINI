@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登录 - 商城后台管理系统</title>
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <style>
+        .login-container {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #2d3a4b;
+        }
+        .login-form {
+            width: 400px;
+            padding: 40px;
+            background: #fff;
+            border-radius: 4px;
+        }
+        .login-title {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div class="login-container">
+            <div class="login-form">
+                <h2 class="login-title">商城后台管理系统</h2>
+                <el-form :model="loginForm" :rules="rules" ref="loginForm">
+                    <el-form-item prop="username">
+                        <el-input 
+                            v-model="loginForm.username" 
+                            prefix-icon="el-icon-user"
+                            placeholder="用户名">
+                        </el-input>
+                    </el-form-item>
+                    <el-form-item prop="password">
+                        <el-input 
+                            v-model="loginForm.password" 
+                            prefix-icon="el-icon-lock"
+                            type="password"
+                            placeholder="密码">
+                        </el-input>
+                    </el-form-item>
+                    <el-form-item>
+                        <el-button 
+                            type="primary" 
+                            :loading="loading"
+                            style="width: 100%"
+                            @click="handleSubmit">
+                            登录
+                        </el-button>
+                    </el-form-item>
+                </el-form>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
+    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                loginForm: {
+                    username: '',
+                    password: ''
+                },
+                rules: {
+                    username: [
+                        { required: true, message: '请输入用户名', trigger: 'blur' }
+                    ],
+                    password: [
+                        { required: true, message: '请输入密码', trigger: 'blur' }
+                    ]
+                },
+                loading: false
+            },
+            methods: {
+                async handleSubmit() {
+                    console.log('开始登录请求');
+                    try {
+                        const res = await axios.post('/api/admin/login', this.loginForm);
+                        console.log('登录响应:', res.data);
+                        
+                        if (res.data.code === 0) {
+                            console.log('登录成功，准备跳转');
+                            // 登录成功后等待一小段时间再跳转，确保session已保存
+                            setTimeout(() => {
+                                console.log('执行跳转');
+                                window.location.href = '/';
+                            }, 500);  // 增加等待时间到500ms
+                        } else {
+                            console.log('登录失败:', res.data.message);
+                            this.$message.error(res.data.message);
+                        }
+                    } catch (error) {
+                        console.error('登录错误:', error);
+                        this.$message.error('登录失败，请重试');
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html> 

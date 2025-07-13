@@ -1,0 +1,31 @@
+<view class="container">
+  <!-- 商品主图 -->
+  <view class="goods-image">
+    <image src="{{goods.image_url}}" mode="aspectFill" />
+  </view>
+
+  <!-- 商品信息 -->
+  <view class="goods-info">
+    <view class="goods-name">{{goods.name}}</view>
+    <view class="goods-price">
+      <text class="symbol">¥</text>
+      <text class="price">{{goods.price}}</text>
+    </view>
+  </view>
+
+  <!-- 商品详情 -->
+  <view class="goods-detail">
+    <view class="title">商品详情</view>
+    <rich-text nodes="{{goods.content}}"></rich-text>
+  </view>
+
+  <!-- 底部操作栏 -->
+  <view class="footer">
+    <view class="cart-btn" bindtap="goToCart">
+      <cart-icon count="{{cartCount}}" />
+      <text>购物车</text>
+    </view>
+    <view class="action-btn add-cart" bindtap="addToCart">加入购物车</view>
+    <view class="action-btn buy" bindtap="buyNow">立即购买</view>
+  </view>
+</view> 

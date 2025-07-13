@@ -1,0 +1,87 @@
+<view class="container">
+  <!-- 搜索栏 -->
+  <view class="search-bar">
+    <input type="text" placeholder="搜索商品" disabled bindtap="onSearchTap"/>
+  </view>
+
+  <!-- 轮播图 -->
+  <swiper class="banner" indicator-dots autoplay circular>
+    <swiper-item wx:for="{{banners}}" wx:key="id">
+      <image src="{{item.image_url}}" mode="aspectFill"/>
+    </swiper-item>
+  </swiper>
+
+  <!-- 推荐商品 -->
+  <view class="recommend">
+    <view class="section-title">推荐商品</view>
+    <scroll-view class="recommend-list" scroll-x>
+      <view class="recommend-item" 
+            wx:for="{{recommendGoods}}" 
+            wx:key="id" 
+            bindtap="goToDetail" 
+            data-id="{{item.id}}"
+            data-item="{{item}}">
+        <image src="{{item.image_url}}" mode="aspectFill"/>
+        <view class="goods-info">
+          <text class="goods-name">{{item.name}}</text>
+          <view class="price-cart">
+            <text class="goods-price">¥{{item.price}}</text>
+            <view class="cart-btn" catchtap="addToCart" data-product="{{item}}">
+              <image src="/assets/icons/cart.png" mode="aspectFit" />
+            </view>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+
+  <!-- 分类商品 -->
+  <view class="category-section" wx:for="{{categories}}" wx:key="id">
+    <view class="category-header">
+      <text class="category-title">{{item.name}}</text>
+      <view class="more-link" bindtap="navigateToCategory" data-id="{{item.id}}">
+        <text>更多</text>
+        <text class="arrow">></text>
+      </view>
+    </view>
+    <view class="category-goods">
+      <view class="goods-item" 
+            wx:for="{{item.goods}}" 
+            wx:key="id" 
+            wx:for-item="goods" 
+            bindtap="goToDetail" 
+            data-id="{{goods.id}}"
+            data-item="{{goods}}">
+        <image src="{{goods.image_url}}" mode="aspectFill"/>
+        <view class="goods-info">
+          <text class="goods-name">{{goods.name}}</text>
+          <view class="price-cart">
+            <text class="goods-price">¥{{goods.price}}</text>
+            <view class="cart-btn" catchtap="addToCart" data-product="{{goods}}">
+              <image src="/assets/icons/cart.png" mode="aspectFit" />
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 商品卡片 -->
+  <view class="product-card" 
+        wx:for="{{products}}" 
+        wx:key="id" 
+        bindtap="goToDetail" 
+        data-id="{{item.id}}"
+        data-item="{{item}}">
+    <image class="product-image" src="{{item.image}}" mode="aspectFill"/>
+    <view class="product-info">
+      <text class="product-name">{{item.name}}</text>
+      <view class="price-cart">
+        <text class="product-price">¥{{item.price}}</text>
+        <view class="cart-btn" catchtap="addToCart" data-product="{{item}}">
+          <image src="/assets/icons/cart.png" mode="aspectFit" />
+        </view>
+      </view>
+    </view>
+  </view>
+</view> 

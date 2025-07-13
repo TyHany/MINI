@@ -1,0 +1,20 @@
+.add-to-cart-btn {
+  background-color: #f60;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.add-to-cart-btn:hover {
+  background-color: #f50;
+}
+
+.add-to-cart-btn img {
+  filter: brightness(0) invert(1); /* 将图标改为白色 */
+} 

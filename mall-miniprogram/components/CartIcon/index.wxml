@@ -1,0 +1,4 @@
+<view class="cart-icon" bindtap="onClick">
+  <image class="cart-icon-image" src="/assets/icons/cart.png" />
+  <view class="cart-badge" wx:if="{{count > 0}}">{{count}}</view>
+</view> 

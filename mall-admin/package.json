@@ -1,0 +1,35 @@
+{
+  "name": "mall-admin",
+  "version": "1.0.0",
+  "description": "商城后台管理系统",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "cross-env NODE_ENV=development nodemon app.js",
+    "prod": "cross-env NODE_ENV=production node app.js",
+    "build": "cross-env NODE_ENV=production node scripts/build.js",
+    "start:prod": "pm2 start ecosystem.config.js --env production",
+    "stop:prod": "pm2 stop mall-admin",
+    "restart:prod": "pm2 restart mall-admin",
+    "logs": "pm2 logs mall-admin"
+  },
+  "dependencies": {
+    "express": "^4.18.3",
+    "express-session": "^1.18.0",
+    "cookie-parser": "^1.4.6",
+    "body-parser": "^1.20.2",
+    "mysql2": "^3.9.2",
+    "md5": "^2.3.0",
+    "multer": "^1.4.5-lts.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "winston": "^3.12.0",
+    "sequelize": "^6.37.1",
+    "pm2": "^5.3.1",
+    "fs-extra": "^11.2.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0",
+    "cross-env": "^7.0.3"
+  }
+} 
